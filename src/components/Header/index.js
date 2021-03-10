@@ -42,8 +42,8 @@ function Header() {
         <Link to="/sobre">
           Sobre
         </Link>
-        <Link to="/contato">
-          Contato
+        <Link to="/blog">
+          Blog
         </Link>
       </Navbar>
     </header>

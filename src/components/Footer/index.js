@@ -13,18 +13,18 @@ function FooterContent() {
       links={
         <ul>
           <li>
-            <Link to="/">
-              <a className="grey-text text-lighten-3">Home</a>
+            <Link className="grey-text text-lighten-3" to="/">
+             Home
             </Link>
           </li>
           <li>
-            <Link to="/sobre">
-              <a className="grey-text text-lighten-3">Sobre</a>
+            <Link className="grey-text text-lighten-3" to="/sobre">
+             Sobre
             </Link>
           </li>
           <li>
-            <Link to="/contato">
-              <a className="grey-text text-lighten-3">Contato</a>
+            <Link className="grey-text text-lighten-3" to="/blog">
+             Blog
             </Link>
           </li>
         </ul>
