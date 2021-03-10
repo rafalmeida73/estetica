@@ -1,0 +1,35 @@
+.create{
+ min-height: 100vh;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.create .file-path-wrapper{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.create .input-field img{
+ height: 250px;
+ border-radius: 10px;
+}
+
+.create .buttons{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 50px;
+}
+
+.create .buttons button{
+ width: 100%;
+ background-color: var(--primary);
+}
+
+.create .buttons button:focus, .create .buttons button:hover{
+ background-color: var(--primary-dark);
+
+}
