@@ -42,7 +42,7 @@ class Firebase {
         console.log(error)
       });
 
-    localStorage.removeItem("nome");
+    localStorage.clear();
   }
 
   isInitialized() {

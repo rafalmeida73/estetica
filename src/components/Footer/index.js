@@ -4,6 +4,8 @@ import 'materialize-css/dist/css/materialize.min.css';
 import 'materialize-css';
 import { Footer } from 'react-materialize';
 import { Link } from 'react-router-dom';
+import IsLogeed from '../isLogged';
+import Store from '../Store'
 
 function FooterContent() {
   return (
@@ -14,30 +16,34 @@ function FooterContent() {
         <ul>
           <li>
             <Link className="grey-text text-lighten-3" to="/">
-             Home
+              Home
             </Link>
           </li>
           <li>
             <Link className="grey-text text-lighten-3" to="/sobre">
-             Sobre
+              Sobre
             </Link>
           </li>
           <li>
             <Link className="grey-text text-lighten-3" to="/blog">
-             Blog
+              Blog
             </Link>
           </li>
+
+          <Store>
+            <IsLogeed />
+          </Store>
         </ul>
       }
       moreLinks={
-      <a
-      className="grey-text text-lighten-4 right"
-       href="https://github.com/rafalmeida73/estetica"
-       target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Linkedin Rafael Santana"
-       >
-        Repositório no GitHub
+        <a
+          className="grey-text text-lighten-4 right"
+          href="https://github.com/rafalmeida73/estetica"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Linkedin Rafael Santana"
+        >
+          Repositório no GitHub
         </a>}
     >
       <h5 className="white-text">

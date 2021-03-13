@@ -33,6 +33,7 @@ function Login() {
    firebase.login(email, password)
     .then((authData) => {
      console.log(authData);
+     localStorage.setItem("uid", firebase.getCurrentUid())
      history.push("/create");
     }).catch((error) => {
      if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {

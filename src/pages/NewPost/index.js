@@ -6,12 +6,13 @@ import { TextInput, Textarea, Icon, Button } from 'react-materialize';
 import firebase from '../../fireCinnection';
 import { useHistory } from 'react-router-dom';
 import Alert from '@material-ui/lab/Alert';
+import upload from '../../assets/img/upload.png'
 
 function NewPost() {
      let history = useHistory();
      const [imageType, setImageType] = useState(false);
      const [loading, setLoading] = useState(false);
-     const [url, setUrl] = useState("https://img.freepik.com/fotos-gratis/3d-rendem-de-uma-mesa-de-madeira-com-uma-imagem-defocussed-de-um-barco-em-um-lago_1048-3432.jpg");
+     const [url, setUrl] = useState(upload);
      const [title, setTitle] = useState(null);
      const [des, setDesc] = useState(null);
      const [text, setText] = useState(null);
@@ -89,7 +90,7 @@ function NewPost() {
       <div class="file-field input-field" accept="image/png, image/jpeg, image/jpg">
        <input type="file" accept="image/png, image/jpeg, image/jpg" onChange={handleFile}/>
        <div class="file-path-wrapper">
-        <img src={url} alt="Prévia da imagem" className="responsive-img" />
+        <img src={url} alt="Prévia da imagem" width="340" className="responsive-img" />
        </div>
       </div>
       <TextInput

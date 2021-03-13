@@ -5,7 +5,8 @@ import 'materialize-css';
 import { Navbar, Icon } from 'react-materialize';
 import logo from '../../assets/img/logo.svg'
 import { Link } from 'react-router-dom';
-
+import IsLogeed from '../isLogged';
+import Store from '../Store'
 
 function Header() {
   return (
@@ -45,6 +46,11 @@ function Header() {
         <Link to="/blog">
           Blog
         </Link>
+
+        <Store>
+          <IsLogeed />
+        </Store>
+
       </Navbar>
     </header>
   )
