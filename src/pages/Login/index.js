@@ -34,7 +34,7 @@ function Login() {
     .then((authData) => {
      console.log(authData);
      localStorage.setItem("uid", firebase.getCurrentUid())
-     history.push("/create");
+     history.push("/blog");
     }).catch((error) => {
      if (error.code === 'auth/wrong-password' || error.code === 'auth/user-not-found') {
       setWrongPassword(true);

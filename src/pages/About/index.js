@@ -21,7 +21,7 @@ function About() {
     { width: 1200, itemsToShow: 4 }
   ];
 
-
+  
   return (
     <>
       <main className="mainAbout">
@@ -31,7 +31,7 @@ function About() {
             <h1>Lana Rhoades</h1>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-      </p>
+            </p>
             <div className="links">
               {/* <!-- FACEBOOK --> */}
               <a
@@ -53,6 +53,7 @@ function About() {
                     clip-rule="evenodd"
                     d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24ZM26.5016 38.1115V25.0542H30.1059L30.5836 20.5546H26.5016L26.5077 18.3025C26.5077 17.1289 26.6192 16.5001 28.3048 16.5001H30.5581V12H26.9532C22.6231 12 21.0991 14.1828 21.0991 17.8536V20.5551H18.4V25.0547H21.0991V38.1115H26.5016Z"
                     fill="white"
+                    
                   />
                 </svg>
               </a>
@@ -139,13 +140,11 @@ function About() {
           <div className="col s12 m6 l6">
             <div className="square">
               <motion.div
-                transition={{ delay: 0.5, duration: 0.5 }}
-                variants={{
-                  show: { opacity: 1 },
-                  hidden: { opacity: 0 },
+                animate={{ scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+                whileTap={{
+                  scale: 1
                 }}
-                initial="hidden"
-                animate="show"
               >
                 <img
                   src={woman}
@@ -223,16 +222,16 @@ function About() {
           </div>
 
           <div className="imgsDiv">
-            <ReactCompareImage
+          <ReactCompareImage
               leftImage="https://www.estudokids.com.br/wp-content/uploads/2020/02/o-que-e-paisagem-1200x675.jpg"
               leftImageLabel="Antes"
               rightImage="https://www.infoescola.com/wp-content/uploads/2019/10/paisagem-ouro-preto-1008049370.jpg"
               rightImageLabel="Depois"
               sliderLineColor="#9E53AB"
               handle={
-                <imf
+                <img
                   src={flower}
-                  alt="Picture of the author"
+                  alt="Logo"
                   width="60"
                   height="60"
                 />

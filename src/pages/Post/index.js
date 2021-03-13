@@ -88,7 +88,7 @@ function Post() {
                       className="red-text"
                     >
                       Cancelar
-</Button>,
+                    </Button>,
                     <Button
                       flat
                       modal="close"
@@ -98,7 +98,7 @@ function Post() {
                       className="green-text"
                     >
                       Confirmar
-</Button>
+                    </Button>
                   ]}
                   bottomSheet={false}
                   fixedFooter
@@ -129,9 +129,9 @@ function Post() {
                   />
                   <p>
                     Ao clicar em
- <b className="green-text"> Confirmar </b>
- o jogo será deletado!
-</p>
+                    <b className="green-text"> Confirmar </b>
+                    o jogo será deletado!
+                    </p>
                 </Modal>
               </Action>
             </Fab>
@@ -148,8 +148,8 @@ function Post() {
               <p>{text}</p>
 
               <div className="more">
-                {link !== null && (
-                  <a href={link}>
+                {link !== "" && (
+                  <a href={link} target="_blank" rel="noopener noreferrer">
                     Saber mais
                   </a>
                 )}

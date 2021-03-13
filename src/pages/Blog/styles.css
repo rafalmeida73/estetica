@@ -20,6 +20,10 @@
   justify-content: center;
 }
 
+.blog .card-content{
+  color: #000 !important;
+}
+
 .blog .card a {
   color: var(--primary-dark) !important;
 }

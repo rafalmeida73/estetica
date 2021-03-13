@@ -18,6 +18,7 @@ function EditPost() {
      const [link, setLink] = useState(null);
      const [text, setText] = useState(null);
      const [title, setTitle] = useState(null);
+     const [error, setError] = useState(false);
 
      useEffect(() => {
           firebase.getPost(id, (info) => {
@@ -76,22 +77,25 @@ function EditPost() {
      };
 
      async function handleSubmit(e) {
+          if (img !== "" && title !== "" && des !== "" && text !== "") {
+               setError(false);
+               const currentUid = firebase.getCurrentUid();
 
-          const currentUid = firebase.getCurrentUid();
+               let info = {
+                    imagem: img,
+                    title,
+                    des,
+                    text,
+                    link,
+                    autor: currentUid
+               };
 
-          let info = {
-               imagem: img,
-               title,
-               des,
-               text,
-               link,
-               autor: currentUid
-          };
+               await firebase.editPost(id, info);
 
-          await firebase.editPost(id, info);
-
-          history.goBack()
-
+               history.goBack()
+          } else {
+               setError(true);
+          }
           e.preventDefault()
      }
      return (
@@ -101,6 +105,11 @@ function EditPost() {
                          {imageType && (
                               <Alert variant="filled" severity="error">
                                    Envie uma imagem do tipo PNG, JPEG ou JPG!
+                              </Alert>
+                         )}
+                         {error && (
+                              <Alert variant="filled" severity="warning">
+                                   Por favor, preencha todos os campos obrigatórios!
                               </Alert>
                          )}
                          <form onSubmit={handleSubmit}>
@@ -113,7 +122,7 @@ function EditPost() {
                               <TextInput
                                    icon="title"
                                    id="title"
-                                   label="Título"
+                                   label="Título *"
                                    value={title}
                                    onChange={e => setTitle(e.target.value)}
                                    noLayout
@@ -121,7 +130,7 @@ function EditPost() {
                               <TextInput
                                    icon="short_text"
                                    id="textShort"
-                                   label="Descrição"
+                                   label="Descrição *"
                                    value={des}
                                    onChange={e => setDes(e.target.value)}
                                    noLayout
@@ -129,7 +138,7 @@ function EditPost() {
                               <Textarea
                                    icon={<Icon>sort</Icon>}
                                    id="Textarea-12"
-                                   label="Texto do post"
+                                   label="Texto do post *"
                                    value={text}
                                    data-length={300}
                                    onChange={e => setText(e.target.value)}
@@ -152,9 +161,9 @@ function EditPost() {
                                         disabled={loading}
                                    >
                                         Editar
-    <Icon left>
+                                             <Icon left>
                                              edit
-    </Icon>
+                                             </Icon>
                                    </Button>
                               </div>
                          </form>

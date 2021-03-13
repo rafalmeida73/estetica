@@ -26,16 +26,6 @@ class Firebase {
     return app.auth().signInWithEmailAndPassword(email, password)
   }
 
-  async register(name, email, password) {
-    await app.auth().createUserWithEmailAndPassword(email, password)
-
-    const uid = app.auth().currentUser.uid;
-
-    return app.database().ref('usuarios').child(uid).set({
-      nome: name
-    })
-  }
-
   logout = async () => {
     await app.auth().signOut()
       .catch((error) => {
