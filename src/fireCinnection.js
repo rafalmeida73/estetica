@@ -17,6 +17,7 @@ let firebaseConfig = {
 class Firebase {
   constructor() {
     app.initializeApp(firebaseConfig);
+    console.log(firebaseConfig)
     this.app = app.database();
     this.storage = app.storage();
   }
@@ -41,7 +42,7 @@ class Firebase {
         console.log(error)
       });
 
-      localStorage.removeItem("nome");
+    localStorage.removeItem("nome");
   }
 
   isInitialized() {
@@ -68,23 +69,19 @@ class Firebase {
       .once('value').then(callback);
   }
 
-  async getGame(id, callback) {
-    await app.database().ref('games').child(id)
+  async getPost(id, callback) {
+    await app.database().ref('posts').child(id)
       .once('value').then(callback).catch(error => {
         return null
-    });
+      });
   }
 
-  async deleteComment(id, commentId) {
-    await app.database().ref('comentarios').child(id).child(commentId).remove();
+  async deletePost(id) {
+    await app.database().ref('posts').child(id).remove();
   }
 
-  async deleteGame(id) {
-    await app.database().ref('games').child(id).remove();
-  }
-
-  async editGame(id, data) {
-    await app.database().ref('games').child(id).set(data);
+  async editPost(id, data) {
+    await app.database().ref('posts').child(id).set(data);
   }
 }
 

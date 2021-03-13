@@ -6,16 +6,20 @@
   flex-direction: column;
 }
 
-.blog .logo{
- display: flex;
- justify-content: center;
+.blog .logo {
+  display: flex;
+  justify-content: center;
 }
 
-.blog .card .card-action{
- display: flex;
- justify-content: center;
+.blog .cardData {
+  width: 100% !important;
 }
 
-.blog .card a{
- color: var(--primary-dark) !important;
+.blog .card .card-action {
+  display: flex;
+  justify-content: center;
+}
+
+.blog .card a {
+  color: var(--primary-dark) !important;
 }

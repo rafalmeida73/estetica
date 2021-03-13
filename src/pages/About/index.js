@@ -6,8 +6,6 @@ import ReactCompareImage from 'react-compare-image';
 import Carousel from "react-elastic-carousel";
 import Item from "../../components/Item";
 import Certified from "../../components/Certified";
-import { Button, Icon } from 'react-materialize';
-import { Link } from 'react-router-dom';
 import woman from '../../assets/img/woman.png'
 import card from '../../assets/img/card.png'
 import certificado from '../../assets/img/certificado.jpg'
@@ -216,7 +214,7 @@ function About() {
               handle={
                 <img
                   src={flower}
-                  alt="Picture of the author"
+                  alt="Logo"
                   width="60"
                   height="60"
                 />
@@ -252,7 +250,7 @@ function About() {
               handle={
                 <img
                   src={flower}
-                  alt="Picture of the author"
+                  alt="Logo"
                   width="60"
                   height="60"
                 />
@@ -270,7 +268,7 @@ function About() {
             <div className="payments">
               <img
                 src={flower}
-                alt="Picture of the author"
+                alt="Logo"
                 width="25"
                 height="25"
               />
@@ -279,7 +277,7 @@ function About() {
             <div className="payments">
               <img
                 src={flower}
-                alt="Picture of the author"
+                alt="Logo"
                 width="25"
                 height="25"
               />
@@ -288,7 +286,7 @@ function About() {
             <div className="payments">
               <img
                 src={flower}
-                alt="Picture of the author"
+                alt="Logo"
                 width="25"
                 height="25"
               />
@@ -297,7 +295,7 @@ function About() {
             <div className="payments">
               <img
                 src={flower}
-                alt="Picture of the author"
+                alt="Logo"
                 width="25"
                 height="25"
               />
@@ -307,7 +305,7 @@ function About() {
           <div className="col s12 m6 l6">
             <img
               src={card}
-              alt="Picture of the author"
+              alt="Logo"
               width="250"
               height="250"
             />          </div>

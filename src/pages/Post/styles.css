@@ -5,6 +5,10 @@
   align-items: center;
 }
 
+.rtf--ab__c button:focus {
+  background-color: #aaa;
+}
+
 .post .container {
   background-color: rgba(141, 138, 138, 0.473);
   padding: 50px 30px 30px 30px;
@@ -67,6 +71,7 @@
 .post .icons a:hover svg path {
   fill: var(--primary-dark);
 }
+
 
 
 @media (min-width: 768px) {
